@@ -5,7 +5,7 @@ export default function NotFound() {
     return (
         <div className=''>
             <div>
-                <img src="/logo.png" alt="" />
+                <img src="/logo.png" width={400} className='justify-self-center' alt="" />
             </div>
             <div className='text-center text-3xl'>
                 <h1>Oops...</h1>

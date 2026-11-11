@@ -7,10 +7,12 @@
   --header-bg: #e8e7e7;
   --sidebar-bg: #e8e7e7;
   --sidebar-border: #c5c5c5;
-  --sidebar-link-background: #e6e6e6bd;
+  --sidebar-link-background: #41414141;
   --header-height: 67px;
   --tabs-height: 70px;
   --tabs-bg: #e8e7e7;
+  --tabs-color: #878787;
+  --tabs-focused: rgb(0, 0, 0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,7 +21,10 @@
     --header-bg: #050505;
     --sidebar-bg: #080808;
     --sidebar-border: #222222;
+    --sidebar-link-background: #ffffff41;
     --tabs-bg: #050505;
+  --tabs-color: #747474;
+  --tabs-focused: #fff;
   }
 }
 body {

@@ -17,6 +17,14 @@ export default function PostCard({ post }) {
         post.likes = likes;
         console.log(post)
     };
+    const images = [
+        "/logo.jpg",
+        "/logo.png",
+        "/logo.png",
+        "/logo.png",
+        "/logo.png",
+    ]
+    let postImages = images.filter((_, index) => index < 4);
     return (
         <>
             <div className="p-0">
@@ -35,8 +43,35 @@ export default function PostCard({ post }) {
                 <div className="mb-3">
                     <h1>{post.text}</h1>
                 </div>
-                <div className="w-full">
-                    <img src="/logo.png" alt="" />
+                <div className="w-full divide-black">
+                    {/* {postImages.map((image, index) => (
+                        <>
+                            {postImages.length < 3 &&
+                                <div key={index} className="w-full">
+                                    <img src={image} className="justify-self-center" height={400} width={400} alt="" />
+                                </div>
+                            }
+                            {
+                                postImages.length >= 3 &&
+                                <>
+                                    <div key={index} className="grid">
+                                        <div className="">
+                                            <img src={index == 0 && image} className="w-full" alt="" />
+                                        </div>
+                                        <div className="grid">
+                                            <div className="">
+                                                <img src={index == 1 && image} className="w-full" alt="" />
+                                            </div>
+                                            <div className="">
+                                                <img src={index == 2 && image} className="w-full" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                        </>
+                    ))} */}
+                    <img src="/logo.png" className="justify-self-center" width={400} alt="" />
                 </div>
                 <div className="w-full border-t border-[var(--sidebar-border)]">
 

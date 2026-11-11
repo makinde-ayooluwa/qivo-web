@@ -17,7 +17,7 @@ import Sidebar from "../components/layout/sidebar";
 import Tabs from "../components/layout/tabs";
 
 export default function AppLayout({ children }) {
-    const MOBILE_WIDTH = 992;
+    const MOBILE_WIDTH = 765;
 
     const [showSidebar, setShowSidebar] = useState(
         window.innerWidth > MOBILE_WIDTH
