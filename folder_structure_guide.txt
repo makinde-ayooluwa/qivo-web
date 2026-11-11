@@ -1,0 +1,29 @@
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Sidebar.jsx
+│   │   ├── Header.jsx
+│   │   ├── Navbar.jsx
+│   │   └── Footer.jsx
+│   │
+│   ├── ui/
+│   │   ├── Button.jsx
+│   │   ├── Avatar.jsx
+│   │   ├── Modal.jsx
+│   │   └── Input.jsx
+│   │
+│   ├── social/
+│   │   ├── Post.jsx
+│   │   ├── Story.jsx
+│   │   ├── Comment.jsx
+│   │   └── VideoCard.jsx
+│   │
+│   └── common/
+│       ├── Loader.jsx
+│       └── EmptyState.jsx
+│
+├── app/
+├── hooks/
+├── contexts/
+├── services/
+└── assets/
