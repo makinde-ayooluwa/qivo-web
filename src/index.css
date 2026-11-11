@@ -9,6 +9,8 @@
   --sidebar-border: #c5c5c5;
   --sidebar-link-background: #e6e6e6bd;
   --header-height: 67px;
+  --tabs-height: 70px;
+  --tabs-bg: #e8e7e7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +19,7 @@
     --header-bg: #050505;
     --sidebar-bg: #080808;
     --sidebar-border: #222222;
+    --tabs-bg: #050505;
   }
 }
 body {
