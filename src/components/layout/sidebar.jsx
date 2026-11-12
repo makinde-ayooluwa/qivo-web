@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SidebarNav from "../UI/sidebarNav";
+import SidebarNav from "../ui/sidebarNav";
 import { useState } from "react";
 
 export default function Sidebar({ links }) {
