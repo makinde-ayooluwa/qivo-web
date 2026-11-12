@@ -53,7 +53,7 @@ export default function AppLayout({ children }) {
             <div className="min-w-0 w-full overflow-x-hidden">
                 {showSidebar && <Sidebar links={links} />}
                 {!showSidebar && <Tabs links={links} />}
-                <main className={`min-w-0 mb-[var(--tabs-height)] ${showSidebar ? "ml-64" : ""}`}>
+                <main className={`min-w-0 mb-[var(--tabs-height)] p-1 ${showSidebar ? "ml-64" : ""}`}>
                     {children}
                 </main>
             </div>

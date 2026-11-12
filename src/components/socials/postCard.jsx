@@ -24,7 +24,6 @@ export default function PostCard({ post }) {
         "/logo.png",
         "/logo.png",
     ]
-    let postImages = images.filter((_, index) => index < 4);
     return (
         <>
             <div className="p-0">
@@ -43,36 +42,91 @@ export default function PostCard({ post }) {
                 <div className="mb-3">
                     <h1>{post.text}</h1>
                 </div>
-                <div className="w-full divide-black">
-                    {/* {postImages.map((image, index) => (
-                        <>
-                            {postImages.length < 3 &&
-                                <div key={index} className="w-full">
-                                    <img src={image} className="justify-self-center" height={400} width={400} alt="" />
-                                </div>
-                            }
-                            {
-                                postImages.length >= 3 &&
-                                <>
-                                    <div key={index} className="grid">
-                                        <div className="">
-                                            <img src={index == 0 && image} className="w-full" alt="" />
-                                        </div>
-                                        <div className="grid">
-                                            <div className="">
-                                                <img src={index == 1 && image} className="w-full" alt="" />
-                                            </div>
-                                            <div className="">
-                                                <img src={index == 2 && image} className="w-full" alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </>
-                            }
-                        </>
-                    ))} */}
-                    <img src="/logo.png" className="justify-self-center" width={400} alt="" />
+
+                <div className="w-full overflow-hidden">
+                    {images.length === 1 && (
+                        <div className="flex justify-center">
+                            <img
+                                src={images[0]}
+                                className="max-h-[500px] max-w-full object-contain"
+                                alt="Post"
+                            />
+                        </div>
+                    )}
+
+                    {images.length === 2 && (
+                        <div className="grid grid-cols-2 gap-1">
+                            {images.map((image, index) => (
+                                <img
+                                    key={index}
+                                    src={image}
+                                    className="w-full h-72 object-cover"
+                                    alt={`Post ${index + 1}`}
+                                />
+                            ))}
+                        </div>
+                    )}
+
+                    {/* {images.length >= 3 && (
+                        <div className="grid grid-cols-2 gap-1 h-[400px]">
+                            <img
+                                src={images[0]}
+                                className="w-full h-full object-cover"
+                                alt="Post 1"
+                            />
+
+                            <div className="grid grid-rows-2 gap-1 min-h-0">
+                                {images.slice(1, 3).map((image, index) => (
+                                    <img
+                                        key={index}
+                                        src={image}
+                                        className="w-full h-full object-cover min-h-0"
+                                        alt={`Post ${index + 2}`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    )} */}
+
+{images.length >= 3 && (
+    <div className="grid grid-cols-2 gap-1 h-[400px]">
+        {/* First large image */}
+        <img
+            src={images[0]}
+            className="w-full h-full object-cover"
+            alt="Post 1"
+        />
+
+        <div className="grid grid-rows-2 gap-1 min-h-0">
+            {/* Second image */}
+            <img
+                src={images[1]}
+                className="w-full h-full object-cover min-h-0"
+                alt="Post 2"
+            />
+
+            {/* Third image with overlay */}
+            <div className="relative min-h-0">
+                <img
+                    src={images[2]}
+                    className="w-full h-full object-cover"
+                    alt="Post 3"
+                />
+
+                {images.length > 3 && (
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <span className="text-white text-3xl font-bold">
+                            +{images.length - 3}
+                        </span>
+                    </div>
+                )}
+            </div>
+        </div>
+    </div>
+)}
+
                 </div>
+
                 <div className="w-full border-t border-[var(--sidebar-border)]">
 
                     {/* Like count */}

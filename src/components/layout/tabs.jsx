@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Tabs({ links }) {
     return (
-        <div className='fixed bottom-0 mb-0 h-[var(--tabs-height)] w-full bg-[var(--tabs-bg)]'>
+        <div className='fixed bottom-0 mb-0 h-[var(--tabs-height)] w-full bg-[var(--tabs-bg)] z-20'>
             <div className='flex justify-between h-full items-center align-middle p-3'>
                 {links.filter((x) => x.tab).map((link, index) => (
                     <>

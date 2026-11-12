@@ -1,140 +1,12 @@
 import { MdAdd, MdPerson, MdPlusOne } from "react-icons/md"
 import Header from "../components/layout/header"
 import PostCard from "../components/socials/postCard";
+import { usePosts } from "../providers/postProvider";
+import { useStories } from "../providers/storyProvider";
 
 const Homepage = () => {
-    const stories = [
-        {
-            name: "Makinde Ayooluwa"
-        },
-        {
-            name: "StorePilot Official"
-        },
-        {
-            name: "TMRX Global"
-        },
-        {
-            name: "Annie Johnson"
-        },
-        {
-            name: "StorePilot Official"
-        },
-        {
-            name: "TMRX Global"
-        },
-        {
-            name: "Annie Johnson"
-        }, ,
-        {
-            name: "StorePilot Official"
-        },
-        {
-            name: "TMRX Global"
-        },
-        {
-            name: "Annie Johnson"
-        }, ,
-        {
-            name: "StorePilot Official"
-        },
-        {
-            name: "TMRX Global"
-        },
-        {
-            name: "Annie Johnson"
-        }, ,
-        {
-            name: "StorePilot Official"
-        },
-        {
-            name: "TMRX Global"
-        },
-        {
-            name: "Annie Johnson"
-        },
-    ]
-    const posts = [
-        {
-            user: {
-                name: "StorePilot Official"
-            },
-            text: "Lorem ipsum dolet enum dolet anum dot lemekue",
-            likes: [
-                "26262272727","27726262727262",
-            ],
-            comments: [
-                {
-                    user: "Makinde Ayooluwa",
-                    comment: "Great service at the place"
-                },
-                {
-                    user: "Makinde Ayooluwa",
-                    comment: "Great service at the place"
-                },
-            ],
-            createdAt: "Jun 3"
-        },
-        {
-            user: {
-                name: "StorePilot Official"
-            },
-            text: "Lorem ipsum dolet enum dolet anum dot lemekue",
-            likes: [
-                "26262272727","27726262727262",
-            ],
-            comments: [
-                {
-                    user: "Makinde Ayooluwa",
-                    comment: "Great service at the place"
-                },
-                {
-                    user: "Makinde Ayooluwa",
-                    comment: "Great service at the place"
-                },
-            ],
-            createdAt: "Jun 3"
-        },
-        {
-            user: {
-                name: "StorePilot Official"
-            },
-            text: "Lorem ipsum dolet enum dolet anum dot lemekue",
-            likes: [
-                "26262272727","27726262727262",
-            ],
-            comments: [
-                {
-                    user: "Makinde Ayooluwa",
-                    comment: "Great service at the place"
-                },
-                {
-                    user: "Makinde Ayooluwa",
-                    comment: "Great service at the place"
-                },
-            ],
-            createdAt: "Jun 3"
-        },
-        {
-            user: {
-                name: "StorePilot Official"
-            },
-            text: "Lorem ipsum dolet enum dolet anum dot lemekue",
-            likes: [
-                "26262272727","27726262727262",
-            ],
-            comments: [
-                {
-                    user: "Makinde Ayooluwa",
-                    comment: "Great service at the place"
-                },
-                {
-                    user: "Makinde Ayooluwa",
-                    comment: "Great service at the place"
-                },
-            ],
-            createdAt: "Jun 3"
-        },
-    ];
+    const { stories } = useStories();
+    const { posts } = usePosts();
     return (
         <>
             <div className="p-0">
@@ -157,10 +29,11 @@ const Homepage = () => {
                             </div>
 
                             {/* Other Stories */}
-                            {stories.length < 1 && (
-                                <>
-                                    <h1>No stories</h1>
-                                </>
+                            {stories.length === 0 && (
+                                <div className="w-full py-8 text-center text-gray-400">
+                                    <p className="text-sm">No stories yet.</p>
+                                    <p className="text-xs mt-1">Be the first to share a moment!</p>
+                                </div>
                             )}
                             {stories.filter((x, index) => index < 3).map((story, index) => (
                                 <div key={index} className="w-[75px] shrink-0 grid justify-items-center gap-1 cursor-pointer">
@@ -178,8 +51,8 @@ const Homepage = () => {
                 </div>
                 {/* POSTS */}
                 <div className="grid">
-                    {posts.map((post) => (
-                        <PostCard post={post} />
+                    {posts.map((post, index) => (
+                        <PostCard key={index} post={post} />
                     ))}
                 </div>
             </div>
