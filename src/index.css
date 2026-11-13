@@ -13,6 +13,7 @@
   --tabs-bg: #e8e7e7;
   --tabs-color: #878787;
   --tabs-focused: rgb(0, 0, 0);
+  --not-found: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +26,7 @@
     --tabs-bg: #050505;
   --tabs-color: #747474;
   --tabs-focused: #fff;
+  --not-found: #121212;
   }
 }
 body {

@@ -50,10 +50,25 @@ const Homepage = () => {
                     </div>
                 </div>
                 {/* POSTS */}
-                <div className="grid">
-                    {posts.map((post, index) => (
-                        <PostCard key={index} post={post} />
-                    ))}
+                <div className="grid gap-5">
+                    {posts.length > 0 && (
+                        posts.map((post) => (
+                            <PostCard key={post._id} post={post} />
+                        ))
+                    )}
+                    <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
+                        <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
+                            <span className="text-3xl">✓</span>
+                        </div>
+
+                        <h2 className="text-xl font-bold text-white">
+                            You're all caught up!
+                        </h2>
+
+                        <p className="text-sm text-gray-400 mt-2 max-w-xs">
+                            You've seen all the latest posts. Check back later for more updates!
+                        </p>
+                    </div>
                 </div>
             </div>
         </>

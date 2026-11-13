@@ -7,7 +7,6 @@ export default function Tabs({ links }) {
             <div className='flex justify-between h-full items-center align-middle p-3'>
                 {links.filter((x) => x.tab).map((link, index) => (
                     <>
-                        {/* <Link key={index} to={link.link}>*/}
 
                         <NavLink
                             key={index}
@@ -23,7 +22,6 @@ export default function Tabs({ links }) {
                             <span className="text-3xl">{link.icon}</span>
                             {/* <span>{link.title}</span> */}
                         </NavLink>
-                        {/* </Link> */}
                     </>
                 ))}
             </div>

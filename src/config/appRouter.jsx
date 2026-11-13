@@ -3,6 +3,7 @@ import Homepage from "../pages/homepage";
 import AppLayout from "../layouts/appLayout";
 import NotFound from "../components/common/notFound";
 import Explore from "../pages/explore";
+import Reels from "../pages/reels";
 
 const AppRouter = () => {
     return (
@@ -20,6 +21,13 @@ const AppRouter = () => {
                         <>
                             <AppLayout>
                                 <Explore />
+                            </AppLayout>
+                        </>
+                    } />
+                    <Route path="reels" element={
+                        <>
+                            <AppLayout>
+                                <Reels />
                             </AppLayout>
                         </>
                     } />

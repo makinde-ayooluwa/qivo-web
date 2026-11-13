@@ -37,11 +37,11 @@ export default function AppLayout({ children }) {
 
     const links = [
         { title: "Home", icon: <MdHome />, link: "/", tab: true },
-        { title: "Explore", icon: <MdExplore />, link: "/explore", tab: true },
-        { title: "Reels", icon: <MdSlowMotionVideo />, link: "/reels" },
+        { title: "Explore", icon: <MdExplore />, link: "/explore" },
+        { title: "Reels", icon: <MdSlowMotionVideo />, link: "/reels", tab: true },
         { title: "Messages", icon: <MdMessage />, link: "/messages", tab: true },
-        { title: "Notifications", icon: <MdNotifications />, link: "/notifications" },
-        { title: "Saved", icon: <MdBookmark />, link: "/saved", tab: true },
+        { title: "Notifications", icon: <MdNotifications />, link: "/notifications", tab: true },
+        { title: "Saved", icon: <MdBookmark />, link: "/saved" },
         { title: "Profile", icon: <MdPerson />, link: "/profile", tab: true },
         { title: "Settings", icon: <MdSettings />, link: "/settings" }
     ];
